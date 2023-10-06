@@ -16,6 +16,12 @@ h1 {
     color: #12486B;
     font-size: 40px;
 }
+#searchBar {
+    border-radius: 10px;
+    background-color: #F5FCCD;
+    width: 200px;
+    height: 25px;
+}
 h2 {
     color: #12486B;;
 }

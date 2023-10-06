@@ -229,7 +229,7 @@ const recipes = [
 const container = document.getElementById("container");
 const filterDropdown1 = document.getElementById("filterDropdown1");
 const filterDropdown2 = document.getElementById("filterDropdown2");
-const sortOnClick = document.getElementById("sortButton");
+
 
 //Function to load and display list of recipes
 
@@ -276,14 +276,18 @@ const loadRecipes = (recipesArray) => {
   
   //Function to sort recipes based on cooking time when clicking button
 
-  const orderRecipes = () => {
-    let orderedRecipes = 
-    recipes.sort(function(a,b) {return a.totalTime - b.totalTime});
-    loadRecipes(orderedRecipes)
-    
-    }
+  const orderRecipes1 = () => {
+    let orderedRecipes = recipes.sort(function(a,b) {
+      return a.totalTime - b.totalTime});
+    loadRecipes(orderedRecipes);
+    };
 
+    const orderRecipes2 = () => {
+      let orderedRecipes2 = recipes.sort((a, b) =>
+        a.name > b.name ? 1 : -1);
 
+      loadRecipes(orderedRecipes2);
+      };
   
   //object.onclick = orderRecipes() {}
 

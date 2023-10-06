@@ -3,9 +3,18 @@ body {
     margin: auto;
     text-align: center;
 }
+.container-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+header {
+    margin-top: 50px;
+}
 h1 {
     font-family: Georgia;
     color: #12486B;
+    font-size: 40px;
 }
 h2 {
     color: #12486B;;

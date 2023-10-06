@@ -7,13 +7,17 @@
   <title>Project Library</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-  <h1>Project Library</h1>
 
+
+<body >
+  <header>
+    <h1>Project Library</h1>
+  </header>
+<main class="container-body">
   <div class="container-options">
     <h2 id="filter">Filter Recipes</h2>
       <select id="filterDropdown1">
-        <option value="all">ALL</option>
+        <option value="all">ALL Cuisine Types</option>
         <option value="Italian">Italian</option>
         <option value="Balanced">Balanced</option>
         <option value="High-Fiber">High-Fiber</option>
@@ -25,7 +29,7 @@
       </select>
     
       <select id="filterDropdown2">
-        <option value="all">ALL</option>
+        <option value="all">ALL Sources</option>
         <option value="Jamie Oliver">Jamie Oliver</option>
         <option value="Red Cook"> Red Cook</option>
         <option value="BBC Good Food">BBC Good Food</option>
@@ -39,14 +43,14 @@
     
   
     <h2 id="sort">Sort Recipes</h2>
-      <button id="sortButton1" onclick="orderRecipes1()">Shortest cooking time first</button>
+      <button id="sortButton1" onclick="orderRecipes1()">Cooking time</button>
       <button id="sortButton2" onclick="orderRecipes2()">Alphabetical order</button>
     
   </div>
  
   <section id="container"></section>
 
-
+</main>
   <script src="./script.js"></script>
 </body>
 </html>

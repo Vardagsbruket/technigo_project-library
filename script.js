@@ -249,7 +249,7 @@ const loadRecipes = (recipesArray) => {
   });
 };
 
-  //Double filter
+  //Double filter to filter on cuisine Type and source
   const doubleFilter = () => {
     const valueDropDown1 = filterDropdown1.value;
     if (valueDropDown1 === "all") {
@@ -275,21 +275,35 @@ const loadRecipes = (recipesArray) => {
   };  
   
   //Function to sort recipes based on cooking time when clicking button
+  
+  let clickedTotalTime = true
 
   const orderRecipes1 = () => {
     let orderedRecipes = recipes.sort(function(a,b) {
       return a.totalTime - b.totalTime});
+      clickedTotalTime = !clickedTotalTime //Mental note: goes from clicked to not clicked (!clicked)
+    if (clickedTotalTime) {
+      orderedRecipes = orderedRecipes.reverse();
+    }
     loadRecipes(orderedRecipes);
-    };
+    }; 
+
+  //Function to sort recipes in alphabetical order when clicking button
+    let clickedAlphabetical = true
 
     const orderRecipes2 = () => {
       let orderedRecipes2 = recipes.sort((a, b) =>
         a.name > b.name ? 1 : -1);
+        clickedAlphabetical = !clickedAlphabetical
+        if (clickedAlphabetical) {
+          orderedRecipes2 = orderedRecipes2.reverse();
+        }
 
       loadRecipes(orderedRecipes2);
       };
   
-  //object.onclick = orderRecipes() {}
+  //Function to show recipes with less than 5 ingredients
+ 
 
 //Apply the filter when the user changes the dropdown selection
   

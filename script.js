@@ -229,6 +229,7 @@ const recipes = [
 const container = document.getElementById("container");
 const filterDropdown1 = document.getElementById("filterDropdown1");
 const filterDropdown2 = document.getElementById("filterDropdown2");
+const sortOnClick = document.getElementById("sortButton");
 
 //Function to load and display list of recipes
 
@@ -242,6 +243,7 @@ const loadRecipes = (recipesArray) => {
         <img src=${recipe.image} art=${recipe.name}>
         <p>${recipe.cuisineType}</p>
         <p>${recipe.source}</p>
+        <p>${recipe.totalTime}</p>
         </div>
         `;
   });
@@ -269,16 +271,21 @@ const loadRecipes = (recipesArray) => {
       );
     }
   
-//Function to sort the dropdown menu's based on cooking time
-
-const sortTotalTime = 
-
     loadRecipes(filteredList2);
   };  
+  
+  //Function to sort recipes based on cooking time when clicking button
+
+  const orderRecipes = () => {
+    let orderedRecipes = 
+    recipes.sort(function(a,b) {return a.totalTime - b.totalTime});
+    loadRecipes(orderedRecipes)
+    
+    }
 
 
   
-  
+  //object.onclick = orderRecipes() {}
 
 //Apply the filter when the user changes the dropdown selection
   

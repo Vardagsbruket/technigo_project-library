@@ -229,3 +229,20 @@ const recipes = [
 const container = document.getElementById("container");
 const filterDropdown1 = document.getElementById("filterDropdown1");
 const filterDropdown2 = document.getElementById("filterDropdown2");
+
+//Function to load and display list of recipes
+
+const loadRecipes = (recipesArray) => {
+  container.innerHTML = "";
+
+  recipesArray.forEach((recipe) => {
+    container.innerHTML += `
+      <div class="card">
+        <p>${recipe.name}</p>
+        <img src=${recipe.image} art=${recipe.name}>
+        <p>${recipe.cuisineType}</p>
+        <p>${recipe.source}</p>
+        </div>
+        `;
+  });
+};

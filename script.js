@@ -247,29 +247,37 @@ const loadRecipes = (recipesArray) => {
   });
 };
 
-//Function to filter and display recipes based on cuisineType
+  //Double filter
+  const doubleFilter = () => {
+    const valueDropDown1 = filterDropdown1.value;
+    if (valueDropDown1 === "all") {
+      filteredList1 = recipes;
+    } else {
+      filteredList1 = recipes.filter(
+        (recipe) =>
+          recipe.cuisineType === valueDropDown1 ||
+          recipe.cuisineType.includes(valueDropDown1)
+      );
+    }
   
-const filterRecipes = () => {
-  const value = filterDropdown1.value;
+    const valueDropDown2 = filterDropdown2.value;
+    if (valueDropDown2 === "all") {
+      filteredList2 = filteredList1;
+    } else {
+      filteredList2 = filteredList1.filter(
+        (recipe) => recipe.source === valueDropDown2
+      );
+    }
+  
+    loadRecipes(filteredList2);
+  };  
 
-  if (value === "all") {
-    loadRecipes(recipes);
-  } else {
-    const filteredList1 = recipes.filter((recipe) => {
-      if ((typeof recipe.cuisineType) === 'string') {
-        return recipe.cuisineType === value;
-      } 
-      else if ((typeof recipe.cuisineType) === 'object') {
-      return (recipe.cuisineType.includes(value));
-      }
-    }); 
 
-    loadRecipes(filteredList1);
-  }
-};
+  
+  
 
 //Apply the filter when the user changes the dropdown selection
   
-filterDropdown1.addEventListener("change", filterRecipes);
-  
+filterDropdown1.addEventListener("change", doubleFilter);
+filterDropdown2.addEventListener("change", doubleFilter);
 loadRecipes(recipes);

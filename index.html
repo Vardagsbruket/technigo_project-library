@@ -10,45 +10,42 @@
 <body>
   <h1>Project Library</h1>
 
-  <select id="filterDropdown1">
-    <option value="all">ALL</option>
-    <option value="Italian">Italian</option>
-    <option value="Balanced">Balanced</option>
-    <option value="High-Fiber">High-Fiber</option>
-    <option value="Low-Carb">Low-Carb</option>
-    <option value="American">American</option>
-    <option value="South East Asian">South East Asian</option>
-    <option value="Chinese">Chinese</option>
-    <option value="South-American">South-American</option>
-  </select>
-
-  <select id="filterDropdown2">
-    <option value="all">ALL</option>
-    <option value="Jamie Oliver">Jamie Oliver</option>
-    <option value="Red Cook"> Red Cook</option>
-    <option value="BBC Good Food">BBC Good Food</option>
-    <option value="Martha Stewart">Martha Stewart</option>
-    <option value="No Recipes">No Recipes</option>
-    <option value="Serious Eats">Serious Eats</option>
-    <option value="Saveur">Saveur</option>
-    <option value="Food52">Food52</option>
-    <option value="Cookstr">Cookstr</option>
-  </select>
-<!--
-  <select name="" id="sortDropdown3">
-    <option value="unsorted">Unsorted</option>
-    <option value="shortest">Shortest Cooking Time First</option>
-    <option value="longest">Longest Cooking Time First</option>
-  </select>
--->
+  <div class="container-options">
+    <h2 id="filter">Filter Recipes</h2>
+      <select id="filterDropdown1">
+        <option value="all">ALL</option>
+        <option value="Italian">Italian</option>
+        <option value="Balanced">Balanced</option>
+        <option value="High-Fiber">High-Fiber</option>
+        <option value="Low-Carb">Low-Carb</option>
+        <option value="American">American</option>
+        <option value="South East Asian">South East Asian</option>
+        <option value="Chinese">Chinese</option>
+        <option value="South-American">South-American</option>
+      </select>
+    
+      <select id="filterDropdown2">
+        <option value="all">ALL</option>
+        <option value="Jamie Oliver">Jamie Oliver</option>
+        <option value="Red Cook"> Red Cook</option>
+        <option value="BBC Good Food">BBC Good Food</option>
+        <option value="Martha Stewart">Martha Stewart</option>
+        <option value="No Recipes">No Recipes</option>
+        <option value="Serious Eats">Serious Eats</option>
+        <option value="Saveur">Saveur</option>
+        <option value="Food52">Food52</option>
+        <option value="Cookstr">Cookstr</option>
+      </select>
+    
+  
+    <h2 id="sort">Sort Recipes</h2>
+      <button id="sortButton1" onclick="orderRecipes1()">Shortest cooking time first</button>
+      <button id="sortButton2" onclick="orderRecipes2()">Alphabetical order</button>
+    
+  </div>
+ 
   <section id="container"></section>
 
-  <!-- Button to sort recipes depending on cooking time-->
-  <h2>Sort Recipes</h2>
-<button id="sortButton1" onclick="orderRecipes1()">Shortest cooking time first</button>
-<button id="sortButton2" onclick="orderRecipes2()">Alphabetical order</button>
-
-  <!-- Don't forget to connect the JavaScript file -->
 
   <script src="./script.js"></script>
 </body>

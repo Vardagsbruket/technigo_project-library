@@ -229,6 +229,7 @@ const recipes = [
 const container = document.getElementById("container");
 const filterDropdown1 = document.getElementById("filterDropdown1");
 const filterDropdown2 = document.getElementById("filterDropdown2");
+const searchBar = document.getElementById("searchBar");
 
 
 //Function to load and display list of recipes
@@ -302,8 +303,24 @@ const loadRecipes = (recipesArray) => {
       loadRecipes(orderedRecipes2);
       };
   
-  //Function to show recipes with less than 5 ingredients
+  //Function to search for recipes
  
+  //let searchRecipes = [];
+
+  searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+
+    const searchedRecipes = recipes.filter((recipe) => {
+      const lowerCaseIngredients = recipe.ingredients.map((ingredient) => 
+      ingredient.toLowerCase())  
+      return (
+            recipe.name.toLowerCase().includes(searchString) ||
+            lowerCaseIngredients.includes(searchString)
+        );
+    });
+    loadRecipes(searchedRecipes);
+});
+
 
 //Apply the filter when the user changes the dropdown selection
   

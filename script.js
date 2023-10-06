@@ -246,3 +246,24 @@ const loadRecipes = (recipesArray) => {
         `;
   });
 };
+
+//Function to filter and display recipes based on cuisineType
+  
+const filterRecipes = () => {
+  const value = filterDropdown1.value;
+
+  if (value === "all") {
+    loadRecipes(recipes);
+  } else {
+    const filteredList1 = recipes.filter((recipe) => {
+      if ((typeof recipe.cuisineType) === 'string') {
+        return recipe.cuisineType === value;
+      } 
+      else if ((typeof recipe.cuisineType) === 'object') {
+      return (recipe.cuisineType.includes(value));
+      }
+    }); 
+
+    loadRecipes(filteredList1);
+  }
+};

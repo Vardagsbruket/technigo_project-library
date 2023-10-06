@@ -267,3 +267,9 @@ const filterRecipes = () => {
     loadRecipes(filteredList1);
   }
 };
+
+//Apply the filter when the user changes the dropdown selection
+  
+filterDropdown1.addEventListener("change", filterRecipes);
+  
+loadRecipes(recipes);

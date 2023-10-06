@@ -269,6 +269,10 @@ const loadRecipes = (recipesArray) => {
       );
     }
   
+//Function to sort the dropdown menu's based on cooking time
+
+const sortTotalTime = 
+
     loadRecipes(filteredList2);
   };  
 

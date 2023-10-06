@@ -240,11 +240,13 @@ const loadRecipes = (recipesArray) => {
   recipesArray.forEach((recipe) => {
     container.innerHTML += `
       <div class="card">
-        <p>${recipe.name}</p>
+        <p id="recipeName">${recipe.name}</p>
+
         <img src=${recipe.image} art=${recipe.name}>
-        <p>${recipe.cuisineType}</p>
-        <p>${recipe.source}</p>
-        <p>${recipe.totalTime}</p>
+        <p>Cuisine Type: ${recipe.cuisineType}</p>
+        <p>Source: ${recipe.source}</p>
+        <p>Cooking Time: ${recipe.totalTime}</p>
+        <p><a href="${recipe.url}">Link to recipe </a></p>
         </div>
         `;
   });

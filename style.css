@@ -25,10 +25,16 @@ h1 {
 h2 {
     color: #12486B;;
 }
-
+#recipeName {
+    font-size: 25px;
+    text-align: center;
+    margin: 12px;
+}
 p {
-font-size: 20px;
-color: #12486B;
+    font-size: 15pxpx;
+    color: #12486B;
+    text-align: left;
+    margin-left: 12px;
 }
 
 .container-options {
@@ -90,18 +96,19 @@ text-align: center;
 
 .card {
 min-height: 450px;
-width: 200px;
+width: 250px;
 vertical-align: text-top;
 background: rgb(241, 193, 193);
 border-radius: 16px;
 border: 2px solid #F5FCCD;
 margin: 10px;
-background-color: #419197;
+background-color: #F5FCCD;
 }
 
 .card img {
-width: 100%;
-margin: 12px 0;
+    width: 225px;
+    max-height: 150px;
+    margin: 12px 0;
 }
 
 .card p {

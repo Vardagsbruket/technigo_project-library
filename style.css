@@ -38,7 +38,7 @@ color: #12486B;
     text-align: center;
     justify-content: center;
     max-width: 600px;
-    
+    gap: 5px;
 
 }
 #filter {

@@ -246,6 +246,8 @@ const loadRecipes = (recipesArray) => {
         <p>Cuisine Type: ${recipe.cuisineType}</p>
         <p>Source: ${recipe.source}</p>
         <p>Cooking Time: ${recipe.totalTime}</p>
+        <p>Ingredients:</p>
+        <p> ${recipe.ingredients}</p>
         <p><a href="${recipe.url}">Link to recipe </a></p>
         </div>
         `;
